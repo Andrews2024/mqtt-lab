@@ -16,7 +16,7 @@ void sendMessage(const String& topic, const String& message)
 String serString1;
 bool checkSerial1(void)
 {
-    if(Serial1.available())
+    while(Serial1.available())
     {
         char c = Serial1.read();
         serString1 += c;
