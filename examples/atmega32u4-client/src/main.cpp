@@ -10,6 +10,23 @@ void sendMessage(const String& topic, const String& message)
     Serial1.println(topic + String(':') + message);
 }
 
+String serString1;
+bool checkSerial1(void)
+{
+    if(Serial1.available())
+    {
+        char c = Serial1.read();
+        serString1 += c;
+
+        if(c == '\n')
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void setup() 
 {
     Serial.begin(115200);
@@ -35,5 +52,11 @@ void loop()
     {
         lastSend = currTime;
         sendMessage("time", String(currTime));
+    }
+
+    if(checkSerial1())
+    {
+        Serial.print(serString1);
+        serString1 = "";
     }
 }
