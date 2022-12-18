@@ -1,4 +1,7 @@
 #include <Arduino.h>
+#include <Button.h>
+
+Button buttonA2(A2);
 
 /**
  * sendMessage creates a string of the form
@@ -36,6 +39,8 @@ void setup()
 
     Serial1.begin(115200);
 
+    buttonA2.init();
+
     Serial.println("/setup()");
 }
 
@@ -51,12 +56,20 @@ void loop()
     if(currTime - lastSend >= 5000) //send every five seconds
     {
         lastSend = currTime;
-        sendMessage("time", String(currTime));
+        sendMessage("timer/time", String(currTime));
     }
 
     if(checkSerial1())
     {
         Serial.print(serString1);
         serString1 = "";
+    }
+
+    if(buttonA2.checkButtonPress()) 
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            sendMessage("button/time/reallylongstring", String(currTime + i));
+        }
     }
 }
