@@ -65,11 +65,12 @@ void loop()
         serString1 = "";
     }
 
-    if(buttonA2.checkButtonPress()) 
+    static int msgCountToSend = 0;
+    if(buttonA2.checkButtonPress()) msgCountToSend = 10;
+
+    while(msgCountToSend)
     {
-        for(int i = 0; i < 10; i++)
-        {
-            sendMessage("button/time/reallylongstring", String(currTime + i));
-        }
+        sendMessage("button/time", String(currTime + msgCountToSend--));
     }
+    delay(3);
 }
