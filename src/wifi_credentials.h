@@ -1,9 +1,9 @@
 //WiFi credentials
-const char* ssid = "<your ssid>";
-const char* password = "<your network password>";
+const char* ssid = "";
+const char* password = "";
 
 //MQTT credentials
-const char* mqtt_server = "<mqtt-server-name>";
+const char* mqtt_server = "";
 #define mqtt_port 1883 // typically 1883
-#define MQTT_USER "<username>"
-#define MQTT_PASSWORD "<password>"
+#define MQTT_USER ""
+#define MQTT_PASSWORD ""
