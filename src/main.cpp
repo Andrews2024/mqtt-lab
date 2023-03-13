@@ -10,7 +10,8 @@ Button bootButton(0);
 int teamNumber = 100;
 
 //Function headers for test functions
-void sendMessageMS(int ms); //send a message to MQTT every x ms
+void sendMessageMS(int ms); //send a short message to MQTT every x ms
+void sendLongMessageMS(int ms); //send a long message to MQTT every x ms
 
 /**
  * Check for input on Serial (and Serial2 in the next function). Ignores \r. Terminates on \n.
@@ -160,7 +161,8 @@ void loop()
     //if(bootButton.checkButtonPress()) {String bStr("robot1/button0:1"); publishMQTT(bStr);}
 
     //For load testing
-    sendMessageMS(100);    
+    sendMessageMS(100);
+    sendLongMessageMS(100);    
 }
 
 void sendMessageMS(int ms) {
@@ -169,5 +171,14 @@ void sendMessageMS(int ms) {
         String bStr("robot1/sendMessage:1");
         publishMQTT(bStr);
     }
-    return;    
+    return;
+}
+
+void sendLongMessageMS(int ms) {
+    for(int i = 0; i < 100; i++) {
+        delay(ms);
+        String bStr("robot1/sendLongMessage:Hello there! I hope you are enjoying working for the RBE department. From, Ashe Andrews");
+        publishMQTT(bStr);
+    }
+    return;
 }
