@@ -28,3 +28,4 @@ The code also declares a simple *callback function* and subscribes to topics cor
 For more information on MQTT, see [this page](https://www.hivemq.com/mqtt-essentials/). In particular, [Part 5](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices/) explains the topic structure and how to use wildcards.
 
 If you need a client for you computer, [MQTT Explorer](http://mqtt-explorer.com) is easy to use, but any client should work.
+To modify USB read and write permissions to upload code to the ESP32: `sudo chmod a+rw /dev/ttyUSB0`
