@@ -168,7 +168,7 @@ void loop()
 void sendMessageMS(int ms) {
     for(int i = 0; i < 100; i++) {
         delay(ms);
-        String bStr("robot5/sendMessage:1");
+        String bStr("robot14/sendMessage:1");
         publishMQTT(bStr);
     }
     return;
@@ -177,7 +177,7 @@ void sendMessageMS(int ms) {
 void sendLongMessageMS(int ms) {
     for(int i = 0; i < 100; i++) {
         delay(ms);
-        String bStr("robot5/sendLongMessage:Hello there! I hope you are enjoying working for the RBE department. From, Ashe Andrews");
+        String bStr("robot14/sendLongMessage:Hello there! I hope you are enjoying working for the RBE department. From, Ashe Andrews");
         publishMQTT(bStr);
     }
     return;
