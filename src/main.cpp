@@ -161,14 +161,14 @@ void loop()
     //if(bootButton.checkButtonPress()) {String bStr("robot1/button0:1"); publishMQTT(bStr);}
 
     //For load testing
-    sendMessageMS(100);
-    sendLongMessageMS(100);    
+    sendMessageMS(1);
+    sendLongMessageMS(1);    
 }
 
 void sendMessageMS(int ms) {
     for(int i = 0; i < 100; i++) {
         delay(ms);
-        String bStr("robot4/sendMessage:1");
+        String bStr("robot1/sendMessage:1");
         publishMQTT(bStr);
     }
     return;
@@ -177,7 +177,7 @@ void sendMessageMS(int ms) {
 void sendLongMessageMS(int ms) {
     for(int i = 0; i < 100; i++) {
         delay(ms);
-        String bStr("robot4/sendLongMessage:Hello there! I hope you are enjoying working for the RBE department. From, Ashe Andrews");
+        String bStr("robot1/sendLongMessage:Hello there! I hope you are enjoying working for the RBE department. From, Ashe Andrews");
         publishMQTT(bStr);
     }
     return;
