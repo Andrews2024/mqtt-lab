@@ -7,5 +7,6 @@
 * 100 ms delay: In MQTT explorer, it looks like it receives messages in delayed bunches of 3
 * 10 ms delay: Messages get received in bunches of 30 or so
 
-## 20 ESPs: 100 ms
-* 
+## 11 ESP32s: 100 ms per message
+* Messages received quickly in bunches of 3
+* No issues with ESPs disconnecting
