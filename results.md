@@ -12,3 +12,8 @@
 ## 11 ESP32s: 100 ms per message
 * Messages received quickly in bunches of 3 for each board
 * No issues with ESPs disconnecting
+
+## 11 ESP32s: 1 ms per message
+* Lab full during 1001 lab
+* No issues with ESPs disconnecting
+* Messages received quickly in bunches of 30 - 40 for each board
